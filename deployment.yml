@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-hello
+  template:
+    metadata:
+      labels:
+        app: flask-hello
+    spec:
+      containers:
+      - name: flask-hello
+        image: venkatdocker777/flask-app:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
