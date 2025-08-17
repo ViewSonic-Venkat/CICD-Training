@@ -9,6 +9,10 @@ def goodbye():
     ip_address = socket.gethostbyname(hostname)
     return f'Goodbye @{ip_address}!!'
 
+@app.route('/hello')
+def hello():
+    return 'Hello Mark!'
+
 @app.route ('/')
 def home():
     hostname = socket.gethostname()
