@@ -12,8 +12,9 @@ def test_home():
     assert response.status_code == 200
     assert b'Hello World' in response.data
 
-def test_hello():
+def test_goodbye():
     client = app.test_client()
-    response = client.get('/hello')
+    response = client.get('/goodbye')
     assert response.status_code == 200
-    assert b'Hello Mark' in response.data
+    assert b'Goodbye' in response.data
+    
