@@ -4,7 +4,7 @@ import socket
 app = Flask (__name__)
 
 @app.route ('/goodbye')
-def hello():
+def goodbye():
     hostname = socket.gethostname()
     ip_address = socket.gethostbyname(hostname)
     return f'Goodbye @{ip_address}!!'
